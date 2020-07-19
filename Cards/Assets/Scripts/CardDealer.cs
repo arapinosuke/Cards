@@ -6,6 +6,7 @@ public class CardDealer : MonoBehaviour
     private List<Card> deck = new List<Card>();
     private List<Card> playerHand = new List<Card>();
 
+
     private void Start()
     {
         deck = Deck.ShuffleDeck(Deck.GetDeck());
@@ -15,11 +16,11 @@ public class CardDealer : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            CardDeal();
+            CardDeal(playerHand);
         }
     }
 
-    public void CardDeal()
+    public void CardDeal(List<Card>playerHand)
     {
         playerHand.Clear();
 
@@ -39,6 +40,13 @@ public class CardDealer : MonoBehaviour
             Debug.Log($"{card.CardSuit}:{card.Number}");
         }
         Debug.Log(PokerHand.CardHand(playerHand));
+    }
+
+    public void CardChange(List<Card> playerHand,int changeNum)
+    {
+        playerHand.RemoveAt(changeNum);
+        var changeCard = Deck.GetCard(deck);
+        playerHand.Insert(changeNum, changeCard);
     }
 
 }
