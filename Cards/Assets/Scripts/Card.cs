@@ -18,12 +18,15 @@ public class Card
 
     public int Number = 0;
 
+    public int Num = 0;
+
     public const int CardMax = 52;
 
-    public Card(Suit suit,int number)
+    public Card(Suit suit,int number,int num)
     {
         CardSuit = suit;
         Number = number;
+        Num = num;
     }
     ///<summary>
     ///カードの数を決める1"13

@@ -13,7 +13,7 @@ public class Deck
 
         for (int i=0; i<Card.CardMax; i++)
         {
-            deck.Add(new Card(Card.CardSuitJudge(i), Card. CardNumJudge(i)));
+            deck.Add(new Card(Card.CardSuitJudge(i), Card. CardNumJudge(i),i));
         }
         return deck;
     }
